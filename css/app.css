@@ -1,0 +1,60 @@
+body {
+  background-image: linear-gradient(#000, #343434);
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+#card-action, #card-part {
+  width: 600px;
+  height: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+}
+
+#title-action, #title-part, #info {
+  text-align: center;
+  color: white;
+}
+
+.card {
+  width: 100px;
+  height: 180px;
+  position: relative;
+  /* 設定子元素在 3D 空間內 */
+  transform-style: preserve-3d;
+  transition: transform .5s;
+  float: left;
+  margin: 10px;
+}
+
+.card-back {
+  width: 100%;
+  height: 100%;
+  background-image: url(../cards/Red_back.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  position: absolute;
+  /* 翻過來後隱藏背面 ，為mac ios系統而加，正常windows不影響*/
+  backface-visibility: hidden;
+  -web-backface-visibility: hidden;
+}
+
+.card-front {
+  width: 100%;
+  height: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  /* 等比例縮放 */
+  background-size: contain;
+  position: absolute;
+  transform: rotateY(180deg);
+}
+
+.card-open {
+  transform: rotateY(180deg);
+}
